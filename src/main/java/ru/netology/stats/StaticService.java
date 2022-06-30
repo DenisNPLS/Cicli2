@@ -11,11 +11,8 @@ public class StaticService {
     }
 
     public int avarageAmount(int[] sales) {
-        int avarageAmount = 0;
-        for (int sale : sales) {
-            avarageAmount = avarageAmount + sale;
-        }
-        return avarageAmount / 12;
+        int sum = sum(sales);
+        return sum / 12;
     }
 
     public int maxSales(int[] sales) {
@@ -43,13 +40,10 @@ public class StaticService {
     }
 
     public int underCount(int[] sales) {
-        int underAvarage = 0;
-        for (int sale : sales) {
-            underAvarage = underAvarage + sale;
-        }
+        int avarage = avarageAmount(sales);
         int underCount = 0;
         for (int sale : sales) {
-            if (sale < underAvarage / 12) {
+            if (sale < avarage) {
                 underCount++;
             }
         }
@@ -57,13 +51,10 @@ public class StaticService {
     }
 
     public int overCount(int[] sales) {
-        int overAvarage = 0;
-        for (int sale : sales) {
-            overAvarage = overAvarage + sale;
-        }
+        int avarage = avarageAmount(sales);
         int overCount = 0;
         for (int sale : sales) {
-            if (sale > overAvarage / 12) {
+            if (sale > avarage) {
                 overCount++;
             }
         }
